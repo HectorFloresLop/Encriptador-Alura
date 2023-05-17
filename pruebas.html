@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Copiar texto de un textarea a otro</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+<body>
+	<textarea id="texto1"></textarea><br>
+
+    <div class="textarea-wrapper">
+  <textarea placeholder="No se a encontrado texto" id="texto2"></textarea>
+  <img src="./images/Muñeco.png"  class="placeholder-image" id="imagen-placeholder">
+
+</div>
+	<button onclick="copiarTexto()">Copiar texto</button>
+    <script>
+        function copiarTexto() {
+          var texto1 = document.getElementById("texto1").value;
+          document.getElementById("texto2").value = texto1;
+          
+          // Obtener la referencia a la imagen
+          var imagen = document.getElementById("imagen-placeholder");
+
+          // Verificar si el textarea está vacío
+          if (texto1 == "") {
+            imagen.style.display = "block"; // Mostrar la imagen
+          } else {
+            imagen.style.display = "none"; // Ocultar la imagen
+          }
+        }
+    </script>
+</body>
+</html>
